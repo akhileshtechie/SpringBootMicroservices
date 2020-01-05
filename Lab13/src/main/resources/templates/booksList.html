@@ -1,0 +1,78 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+
+<body>
+	<div align="center">
+		<h3>Add New Book</h3>
+		<form action="#" th:action="@{/addBook}" th:object="${mybook}"
+			method="post">
+			<table>
+				<tr>
+					<td><label for="bname">Book Name</label></td>
+					<td><input type="text" th:field="*{bname}"
+						placeholder="Book Name" /></td>
+					<td><span th:errors="*{bname}"></span></td>
+				</tr>
+
+
+				<tr>
+					<td><label for="author">Author</label></td>
+					<td><input type="text" th:field="*{author}"
+						placeholder="Author" /></td>
+					<td><span th:errors="*{author}"></span></td>
+				</tr>
+
+				<tr>
+					<td><label for="price">Price</label></td>
+					<td><input type="text" th:field="*{price}" placeholder="Price" /></td>
+					<td><span th:errors="*{price}"></span></td>
+				</tr>
+
+				<tr>
+					<td><label for="pub">Publications</label></td>
+					<td><input type="text" th:field="*{pub}"
+						placeholder="Publications" /></td>
+					<td><span th:errors="*{pub}"></span></td>
+				</tr>
+
+				<tr>
+					<td colspan="3"><input type="submit" value="Add Book"></td>
+				</tr>
+			</table>
+		</form>
+	</div>
+
+	<div align="center" id="show-books-div">
+		<h2>Latest Books</h2>
+		<table>
+
+			<tr>
+				<th>Book Id</th>
+				<th>Book Name</th>
+				<th>Author</th>
+				<th>Price</th>
+				<th>Publications</th>
+				<th colspan="2" align="center">Actions</th>
+			</tr>
+			</thead>
+			<tbody>
+				<tr th:each="mybook :${myBooksList}">
+
+					<td th:text=${mybook.bid}></td>
+					<td th:text=${mybook.bname}></td>
+					<td th:text=${mybook.author}></td>
+					<td th:text=${mybook.price}></td>
+					<td th:text=${mybook.pub}></td>
+
+					<td><a th:href="@{/editBook}">Edit </a></td>
+					<td><a th:href="@{/deleteBook}">Delete </a></td>
+				</tr>
+
+
+			</tbody>
+		</table>
+
+	</div>
+</body>
+</html>

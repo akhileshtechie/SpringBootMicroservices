@@ -1,0 +1,9 @@
+Manifest-Version: 1.0
+Implementation-Title: Lab2
+Implementation-Version: 1.0
+Built-By: Akhilesh
+Implementation-Vendor-Id: com.coursecube.springboot
+Build-Jdk: 1.8.0_231
+Implementation-URL: http://www.coursecube.com
+Created-By: Maven Integration for Eclipse
+
